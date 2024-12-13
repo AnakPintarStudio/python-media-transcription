@@ -5,7 +5,8 @@ os.environ["OMP_NUM_THREADS"] = "4"
 
 import argparse
 import json
-import torch
+
+# import torch
 
 # import whisper
 import faster_whisper
@@ -60,8 +61,8 @@ def clear(text: str):
 # Transcribe an audio file with faster whisper library
 # model = "large" | "small" | "large-v3" | "tiny"
 def run_faster_whisper(audio, model: str, device="cpu"):
-    if device.lower() == "cuda" and torch.cuda.is_available() == False:
-        device = "cpu"
+    # if device.lower() == "cuda" and torch.cuda.is_available() == False:
+    #     device = "cpu"
 
     model = faster_whisper.WhisperModel(model, device=device, compute_type="int8")
     segments, info = model.transcribe(

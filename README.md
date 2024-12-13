@@ -6,8 +6,6 @@ Media Transcriber using Faster Whisper Model
 
 - Python v3.10 (3.12 recommended)
 - faster-whisper v1.0.3
-- torch v2.4.1
-- torchaudio v2.4.1
 
 ## Run Basic Command
 
