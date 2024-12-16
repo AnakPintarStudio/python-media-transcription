@@ -47,7 +47,7 @@ if __name__ == "__main__":
     if transcription and originalSample:
         results = {
             "status": True,
-            "similarity": f"{similarity_percentage(transcription, originalSample):.1f}%",
+            "similarity": f"{similarity_percentage(transcription, originalSample):.1f}",
             "transcription": transcription,
             "original": originalSample,
         }

@@ -55,7 +55,7 @@ Example results
 ```json
 {
     "status": true,
-    "similarity": "94.5%",
+    "similarity": "94.5",
     "transcription": "A journey of a thousand miles begins with a single step",
     "original": "A journey of a thousand miles begins with a single leap"
 }
