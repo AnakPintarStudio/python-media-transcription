@@ -5,11 +5,8 @@ os.environ["OMP_NUM_THREADS"] = "4"
 
 import argparse
 import json
-
-# import torch
-
-# import whisper
 import faster_whisper
+import similarity
 
 
 def clear(text: str):
@@ -21,41 +18,6 @@ def clear(text: str):
         .replace("。", r"")
         .replace("、", r"")
     )
-
-
-# # Transcribe an audio file with openai whisper library
-# # model = "turbo" | "small" | "tiny"
-# def run_openai_whisper(audio, model: str, device="cpu"):
-#     if device.lower() == "cuda" and torch.cuda.is_available() == False:
-#         device = "cpu"
-
-#     model = whisper.load_model(model, device=device)
-#     result = model.transcribe(
-#         audio,
-#         beam_size=5,
-#         word_timestamps=True,
-#         language="zh",
-#         fp16=False,
-#         initial_prompt="CLC Mandarin",
-#         condition_on_previous_text=False,
-#     )
-#     return clear(result["text"])
-
-
-# # Transcribe multiple audio files with openai whisper library
-# def transcribeOpenaiWhisper(files: [], model: str, device="cpu"):
-#     results = ""
-#     totalTime = 0
-#     for path in files:
-#         start = time.time()
-#         result = run_openai_whisper(path, model, device)
-#         print("transcribeOpenaiWhisper.result: " + result)
-#         results += result
-#         end = time.time()
-#         timeElapsed = end - start
-#         totalTime += timeElapsed
-#         # print("\nopenai-whisper[%s]: %f seconds\n%s" % (model, timeElapsed, result))
-#     return results, totalTime
 
 
 # Transcribe an audio file with faster whisper library
